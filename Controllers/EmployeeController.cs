@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BackendApi.Models;
 using BackendApi.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/employees")]
+    [ApiController]    
     public class EmployeeController : ControllerBase
     {
 
@@ -29,6 +30,27 @@ namespace BackendApi.Controllers
         {
             var empFromRepo = _employeeRepository.GetEmployees();
             return Ok(_mapper.Map<IEnumerable<Employee>>(empFromRepo));
+        }
+
+        [HttpGet("{empId:int}")]
+        public ActionResult<Employee> GetEmployee(int empId)
+        {
+            var empFromRepo = _employeeRepository.GetEmployee(empId);
+
+            if (!_employeeRepository.EmployeeExists(empId))
+            {
+                return NotFound();
+            }                
+
+            return Ok(_mapper.Map<Employee>(empFromRepo));
+        }
+
+        public void AddEmployee(Employee emp)
+        {
+            if(emp != null)
+            {
+                _employeeRepository.AddEmployee(emp);
+            }
         }
 
     }
