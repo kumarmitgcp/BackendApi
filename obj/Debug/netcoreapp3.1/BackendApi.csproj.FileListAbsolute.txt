@@ -123,5 +123,7 @@ C:\data\BackendApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Worksp
 C:\data\BackendApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\data\BackendApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\data\BackendApi\obj\Debug\netcoreapp3.1\BackendApi.csprojAssemblyReference.cache
+C:\data\BackendApi\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\data\BackendApi\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\data\BackendApi\obj\Debug\netcoreapp3.1\BackendApi.csproj.CoreCompileInputs.cache
 C:\data\BackendApi\obj\Debug\netcoreapp3.1\BackendApi.MvcApplicationPartsAssemblyInfo.cache

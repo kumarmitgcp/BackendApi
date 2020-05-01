@@ -28,8 +28,9 @@ namespace BackendApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Employee>> GetEmployees()
         {
-            var empFromRepo = _employeeRepository.GetEmployees();
-            return Ok(_mapper.Map<IEnumerable<Employee>>(empFromRepo));
+
+             var empFromRepo = _employeeRepository.GetEmployees();
+             return Ok(_mapper.Map<IEnumerable<Employee>>(empFromRepo));            
         }
 
         [HttpGet("{empId:int}")]

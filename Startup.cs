@@ -52,7 +52,9 @@ namespace BackendApi
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
-            services.AddDbContext<CoreDbContext>(op => op.UseSqlServer(Configuration.GetConnectionString("Database"))); //Add
+            //services.AddDbContext<CoreDbContext>(op => op.UseSqlServer(Configuration.GetConnectionString("Database"))); //Add
+
+            services.AddDbContext<CoreDbContext>(op => op.UseNpgsql(Configuration.GetConnectionString("postgres")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
